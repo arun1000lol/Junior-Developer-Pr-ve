@@ -33,7 +33,52 @@
 </section>
 
 <!-- Indsæt din løsning herunder -->
+<div class="row">
+    <div class="layout">
+        <!-- Der er brugt pricing-card som allerede er en af jeres CSS klasser til hver kolonne så det ligner mere alt andet på sitet -->
+        <div class="column layout-line pricing-card">
+            <div class="icon">🌟</div>
+            <h3 class="title">Overskrift 1</h3>
+            <p class="description">Beskrivelse af ting</p>
+        </div>
 
+        <!-- CSS klasser til de fleste styles, så de ikke fylder op i HTML'en. De kan også ses i base.css filen. -->
+        <div class="column layout-line pricing-card">
+            <div class="icon">🚀</div>
+            <h3 class="title">Hurtig levering</h3>
+            <p class="description">Noget om hurtigt levering</p>
+            <h3><button id="myBtn" class="cta-button ">Bestil her! (CTO knap)</button></h3>
+            <!--Modal funktionalitet til en popup funktion. Selve modalen er sat op i javascript filen, også er der brugt id til at vise hvor javascripten skal bruges i hver html tag-->
+            <!--Der er også brugt simpelt css til at lave designet en smule pænere-->
+            <!--Lavede også en simpel fade in animation i CSS til modalen-->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3 class="title">Hurtig levering 🚀</h3>
+                    <p class="description">Vi sender lynhurtigt, så du får dine varer uden unødig ventetid! 📦✨
+                        ✔ Fri fragt ved køb over 999,95,-
+                        ✔ 30 dages returret – så du kan handle trygt 🛍️
+                      <br>
+                        Bestil inden kl 15, og så sender vi dine vare afsted allerede i dag 🚚</p>
+
+                        <div id="timer" class="timer"> 
+                            TIMER
+                        </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="column layout-line pricing-card">
+            <div class="icon">💼</div>
+            <h3 class="title">Overskrift 3</h3>
+            <p class="description">En innovativ løsning designet til at gøre din hverdag lettere og mere effektiv. Dette er for at vise hvor responsivt siden er i forhold til hvor meget tekst der er på skærmen</p>
+        </div>
+    </div>
+</div>
+
+</div>
 
 
 

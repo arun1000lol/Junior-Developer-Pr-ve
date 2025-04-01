@@ -22,6 +22,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Modal til popup her 
+    var modal = document.getElementById("myModal");
+
+    var btn = document.getElementById("myBtn");
+
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+    // Timer functionality
+    function updateTimer() {
+        const timerElement = document.getElementById("timer");
+        const now = new Date();
+        const cutoffHour = 15;
+
+        if (now.getHours() >= cutoffHour) {
+            timerElement.textContent = "Bestil inden kl. 15 på hverdage, og få din ordre sendt afsted samme dag";
+        } else {
+            const cutoffTime = new Date();
+            cutoffTime.setHours(cutoffHour, 0, 0, 0);
+            const timeRemaining = cutoffTime - now;
+
+            const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+            timerElement.textContent = `Tid tilbage til levering samme dag: ${hours}t ${minutes}m ${seconds}s`;
+        }
+    }
+
+    // Update the timer every second
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
     // Add active class to the current navigation item
     function highlightCurrentSection() {
         const sections = document.querySelectorAll('section');

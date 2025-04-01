@@ -43,6 +43,128 @@ header .container {
     padding: 15px 20px;
 }
 
+.layout {
+    max-width: fit-content;
+    margin-inline: auto;
+    gap: 20px;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+ 
+.layout-line {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 20px;"
+}
+
+.row .layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Responsiveness til mobiler */
+
+.row .column {
+    flex: 1;
+    min-width: 300px; 
+    box-sizing: border-box;
+    padding: 10px;
+}
+/* Responsiveness til mobiler, dette gøres igennem at man har en max bredde også ændrer man layoutet til at være lordret hvis det er over 768px */
+@media (max-width: 768px) {
+    .row .layout {
+        flex-direction: column;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    animation: fadeIn 0.5s; /* Fade in the modal */
+}
+/* fade in animation for modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/* Hover effekt på ikoner med en float animation */
+.icon:hover{
+    font-size: 20px;
+    animation: float 2s infinite ease-in-out;
+
+   
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .logo h1 {
     font-size: 24px;
     font-weight: 700;
