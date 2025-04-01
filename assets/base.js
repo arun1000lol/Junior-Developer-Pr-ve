@@ -43,12 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
 
-    // Timer functionality
+    // Timer functionalitet til at vise tid tilbage til levering samme dag. 
+    // Har ikke mega meget erfaring med JavaScript, i forhold til andre frameworks fx. Angular eller React, så har fulgt en guide og tilpasset den til vores behov.
+
     function updateTimer() {
         const timerElement = document.getElementById("timer");
         const now = new Date();
         const cutoffHour = 15;
-
+        // if statement til ændre teksten der skal stå. hvis det er efter 15 kommer der til at stå nedenstående ellers kommer der bare til at være en nedtælling til kl. 15.
         if (now.getHours() >= cutoffHour) {
             timerElement.textContent = "Bestil inden kl. 15 på hverdage, og få din ordre sendt afsted samme dag";
         } else {
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
             const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
             const seconds = Math.floor((timeRemaining / 1000) % 60);
-
+            // her er nedtællingen.
             timerElement.textContent = `Tid tilbage til levering samme dag: ${hours}t ${minutes}m ${seconds}s`;
         }
     }
